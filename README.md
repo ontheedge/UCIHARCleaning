@@ -34,16 +34,16 @@ During execution the script creates three files:
 `uci_har_averages.txt` contains 66 * 30 * 6 = 11880 averaged measurements of 66 variables from 30 subjects and six activities.  
 Each row is a 4-tuple of:
 
-* **activity** -- one of the six values:
+* **activity** &mdash; one of the six values:
     * laying
 	* sitting
 	* standing
 	* walking
 	* walking\_downstairs
 	* walking\_upstairs
-* **subject** -- numeric value in the range of 1 to 30 (inclusive) designating the human subject's ID
-* **variable** -- variable name (see below)
-* **average** -- the average of variable for the given (subject, activity) pair
+* **subject** &mdash; numeric value in the range of 1 to 30 (inclusive) designating the human subject's ID
+* **variable** &mdash; variable name (see below)
+* **average** &mdash; the average of variable for the given (subject, activity) pair
 
 The tidied variables' names are converted from the original dataset zip. Only the ones with the mean and standard deviation aggregates are kept. In the tidy format they are made up of three parts:
 
@@ -133,7 +133,7 @@ The `Editing Text Variables` lecture of the course has very strict restrictions 
 
 In my opinion these are unnecessarily restrictive for the current dataset:
 
-* First of all it's very hard to argue that the original names could be made more descriptive. They already contain a lot of information that is intrinsic to the method of data collection and it would be awkward to change the names into something thats "more meaningful" when they already use a common terminology established by the original experimenters. In short, I don't think the data analyist should invent a new wholly new vocabulary just because at first glance "BodyBodyGyroJerkMag" doesn't look "nice". "BodyBodyGyroJerkMag" is already documented in the original code book so there's no need to change it.
+* First of all it's very hard to argue that the original names could be made more descriptive. They already contain a lot of information that is intrinsic to the method of data collection and it would be awkward to change the names into something thats "more meaningful" when they already use a common terminology established by the original experimenters. In short, I don't think the data analyist should invent a new wholly new vocabulary just because at first glance `BodyBodyGyroJerkMag` doesn't look "nice". But `BodyBodyGyroJerkMag` is already documented in the original code book so there's no need to change it.
     * I nevertheless changed everything into lowercase so they look more streamlined.
 * It could be argued that the three variable name components could be exploded into three variables of (domain, frequency, aggreation_method) but it's unclear whether it helps the analysis (again, it's a matter of how far we venture out from the vocabulary of the original dataset.
     * I nevertheless changed the `t` and `f` prefixes to a bit more descriptive naming so it's easier to scan the list of variables for the human eye.
